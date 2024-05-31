@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TableComponent from './component/Table';
+import Table from './component/Table';
 
 import './App.css';
 import  { useState, useEffect } from 'react';
@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
       <h1 className='text-center'>Posts</h1>
-      <TableComponent data={posts} />
+      <Table data={posts} />
     </div>
   );
 }

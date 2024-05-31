@@ -10,7 +10,7 @@ interface Props {
   data: Post[];
 }
 
-function TableComponent({ data }: Props) {
+function Table({ data }: Props) {
   return (
     <table className="table table-bordered table-hover">
       <thead className="thead-dark">
@@ -33,5 +33,5 @@ function TableComponent({ data }: Props) {
   );
 }
 
-export default TableComponent;
+export default Table;
 
