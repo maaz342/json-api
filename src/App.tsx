@@ -1,28 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from './component/Table';
-
+import { Post } from './component/Table';
 import './App.css';
-import  { useState, useEffect } from 'react';
-import axios from 'axios';
-function App() {
-  const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(response => {
-        setPosts(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data: ', error);
-      });
-  }, []);
+function App() {
+  const [posts, setPosts] = useState<Post[]>([]); 
 
   return (
     <div>
       <h1 className='text-center'>Posts</h1>
-      <Table data={posts} />
+      <Table setPosts={setPosts} />
     </div>
   );
 }
